@@ -1,0 +1,45 @@
+﻿@model Parcial3_Web.Models.Contacto;
+@{
+    ViewData["Title"] = "Agregar Nuevo Contacto";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2><i class="fas fa-plus"></i> Agregar Nuevo Contacto</h2>
+
+        <form asp-action="Create">
+            <div class="form-group mb-3">
+                <label asp-for="Nombre" class="form-label">Nombre Completo</label>
+                <input asp-for="Nombre" class="form-control" placeholder="Ej: Juan Pérez García" required>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Telefono" class="form-label">Teléfono</label>
+                <input asp-for="Telefono" class="form-control" placeholder="Ej: 555-1234" required>
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" placeholder="Ej: usuario@empresa.com">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Departamento" class="form-label">Departamento</label>
+                <input asp-for="Departamento" class="form-control" placeholder="Ej: Ventas, Soporte, IT">
+                <span asp-validation-for="Departamento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Guardar Contacto
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Volver al Directorio
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
